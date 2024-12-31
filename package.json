@@ -1,0 +1,16 @@
+{
+  "name": "Bot_Name",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+  "start": "node .",
+  "keep-alive": "node keep_alive.js"
+},
+  "keywords": [],
+  "author": "Your_Name",
+  "license": "MIT",
+  "dependencies": {
+    ""
+  },
+  "description": ""
+}
