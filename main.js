@@ -1,9 +1,10 @@
 const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
+const keepAlive = require('./keep_alive');
 
 // Define the bot's token from an environment variable
 const token = process.env.TOKEN;
-
+keepAlive();
 // Bot is ready
 client.once('ready', () => {
     console.log('Agro Ratana is online!');
