@@ -72,9 +72,9 @@ client.on('messageCreate', (message) => {
       const response = await result.response;
       text = response.text();
       console.log(text);
-      
+      message.reply(text);
     }
-    message.reply(text);
+    
 
     
   }
