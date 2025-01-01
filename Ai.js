@@ -12,7 +12,6 @@ async function processText(promt) {
   const response = await result.response;
   text = response.text();
   console.log(text);
-  return text;
   Answer.recieveAnswer(text);
 }
 
