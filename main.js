@@ -59,7 +59,7 @@ client.on('messageCreate', (message) => {
       improve my farm
       help with farming`);
     }
-    if (message.content.startsWith('<@1323722844278100059> Ask ')) {
+    if (message.content.startsWith('AR Ask ')) {
     const textToSend = message.content.slice(9).trim(); 
     
     Ai.processText(textToSend);
