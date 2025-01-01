@@ -47,22 +47,17 @@ client.on('messageCreate', (message) => {
         - Systems that provide water to the soil when needed automatically.
         - Robots that detect animals or birds in the fields and buzz a siren to scare them away.
         - Robots that detect the nutrients present in the soil and suggest which crops can be grown (not in our robot yet, but we aim to add it).`);
-    }
+    } 
 
     // Provide bot bio and photo
-    if (message.content.toLowerCase().includes('tell me about yourself')) {
-        const bioEmbed = new EmbedBuilder()
-            .setColor(0x00ff00)
-            .setTitle('Agro Ratana')
-            .setDescription('I am Agro Ratana, a multitasking farming robot designed to revolutionize modern agriculture!')
-            .addFields(
-                { name: 'Features', value: 'Ploughing, Seed Sowing, Soil Moisture Monitoring, Grass Cutting, Stone Removal, and more!' },
-                { name: 'Future Plans', value: 'AI-powered management, automatic water systems, and nutrient detection.' }
-            )
-            .setThumbnail('https://example.com/robot-thumbnail.png') // Replace with your image URL
-            .setFooter({ text: 'Your modern farming assistant' });
-
-        message.reply({ embeds: [bioEmbed] });
+    if (message.content.toLowerCase().includes('*help'|| 'help me')) {
+        message.reply(`Here are the commands i have
+      modern farming
+      something about farming
+      features of farming
+      make my farm better
+      improve my farm
+      help with farming`);
     }
 });
 
