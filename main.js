@@ -62,11 +62,12 @@ client.on('messageCreate', (message) => {
     if (message.content.startsWith('AR Ask ')) {
     const textToSend = message.content.slice(9).trim(); 
     message.channel.send('Text Sent For Proccesing');
+    gemini();
    async function gemini() {
   // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
     
-      const prompt = text
+      const prompt = textToSend
     
       const result = await model.generateContent(prompt);
       const response = await result.response;
