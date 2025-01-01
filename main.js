@@ -2,7 +2,8 @@ const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 const keepAlive = require('./keep_alive');
 require('dotenv').config();
-const Ai = require('./Ai.js');
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+const genAI = new GoogleGenerativeAI(process.env.GEMINI);
 
 keepAlive();
 
