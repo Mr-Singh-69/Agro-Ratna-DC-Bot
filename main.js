@@ -2,6 +2,7 @@ const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 const keepAlive = require('./keep_alive');
 require('dotenv').config();
+const Ai = require('./Ai.js');
 
 keepAlive();
 
@@ -59,6 +60,14 @@ client.on('messageCreate', (message) => {
       improve my farm
       help with farming`);
     }
+    if (message.content.startsWith('<@1323722844278100059> Ask ')) {
+    const textToSend = message.content.slice(9); // Extract the text after 'ping Ask '
+    
+    // Send the extracted text to the other file
+    Ai.processText(textToSend);
+
+    message.channel.send('Text received and processed!');
+  }
 });
 
 // Log in to Discord
