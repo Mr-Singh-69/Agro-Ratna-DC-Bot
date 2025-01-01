@@ -58,15 +58,23 @@ client.on('messageCreate', (message) => {
       make my farm better
       improve my farm
       help with farming`);
-    }
+  }
     if (message.content.startsWith('AR Ask ')) {
     const textToSend = message.content.slice(9).trim(); 
     
     Ai.processText(textToSend);
 
-    message.channel.send('Text received and processed!');
+    message.channel.send('Text Sent For Proccesing');
   }
+    function recieveAnswer(answer) {
+        
+    module.exports = { recieveAnswer };
+    
+    message.channel.send(answer);
+  }
+    
 });
-
+    
+    
 client.login(process.env.TOKEN);
 
