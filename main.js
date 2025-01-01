@@ -50,7 +50,6 @@ client.on('messageCreate', (message) => {
         - Robots that detect the nutrients present in the soil and suggest which crops can be grown (not in our robot yet, but we aim to add it).`);
     } 
 
-    // Provide bot bio and photo
     if (message.content.toLowerCase().includes('*help'|| 'help me')) {
         message.reply(`Here are the commands i have
       modern farming
@@ -61,15 +60,13 @@ client.on('messageCreate', (message) => {
       help with farming`);
     }
     if (message.content.startsWith('<@1323722844278100059> Ask ')) {
-    const textToSend = message.content.slice(9).trim(); // Extract the text after 'ping Ask '
+    const textToSend = message.content.slice(9).trim(); 
     
-    // Send the extracted text to the other file
     Ai.processText(textToSend);
 
     message.channel.send('Text received and processed!');
   }
 });
 
-// Log in to Discord
 client.login(process.env.TOKEN);
 
