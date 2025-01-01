@@ -57,20 +57,22 @@ client.on('messageCreate', (message) => {
       features of farming
       make my farm better
       improve my farm
-      help with farming`);
+      help with farming`);                       
   }
     if (message.content.startsWith('AR Ask ')) {
     const textToSend = message.content.slice(9).trim(); 
-    
-    Ai.processText(textToSend);
-
     message.channel.send('Text Sent For Proccesing');
-  }
-    function recieveAnswer(answer) {
-        
-    module.exports = { recieveAnswer };
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
+
+    const prompt = textToSend
+
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    text = response.text();
+    console.log(text);
+    message.reply(text);
+
     
-    message.channel.send(answer);
   }
     
 });
