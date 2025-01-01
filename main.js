@@ -61,7 +61,7 @@ client.on('messageCreate', (message) => {
       help with farming`);
     }
     if (message.content.startsWith('<@1323722844278100059> Ask ')) {
-    const textToSend = message.content.slice(9); // Extract the text after 'ping Ask '
+    const textToSend = message.content.slice(9).trim(); // Extract the text after 'ping Ask '
     
     // Send the extracted text to the other file
     Ai.processText(textToSend);
