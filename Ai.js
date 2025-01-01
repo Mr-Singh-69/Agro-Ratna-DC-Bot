@@ -1,5 +1,7 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const genAI = new GoogleGenerativeAI(process.env.GEMINI);
+const Answer = require('./main.js');
+
 
 async function processText(promt) {
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
@@ -11,7 +13,9 @@ async function processText(promt) {
   text = response.text();
   console.log(text);
   return text;
-  console.log('Received text:', promt); 
+  Answer.recieveAnswer(text);
 }
+
+
 
 module.exports = { processText };
