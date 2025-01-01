@@ -11,7 +11,7 @@ async function processText(promt) {
   text = response.text();
   console.log(text);
   return text;
-  console.log('Received text:', text); 
+  console.log('Received text:', promt); 
 }
 
 module.exports = { processText };
