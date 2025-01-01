@@ -2,8 +2,7 @@ const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 const keepAlive = require('./keep_alive');
 require('dotenv').config();
-// Define the bot's token from an environment variable
-const token = process.env.TOKEN;
+
 keepAlive();
 // Bot is ready
 client.once('ready', () => {
@@ -48,4 +47,4 @@ client.on('messageCreate', (message) => {
 });
 
 // Log in to Discord
-client.login(token);
+client.login(process.env.TOKEN);
