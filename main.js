@@ -65,7 +65,7 @@ client.on('messageCreate', (message) => {
     message.channel.send('Text Sent For Proccesing');
     gemini();
    async function gemini() {
-      const promt = message.content.slice(9).trim(); 
+      const promt = message.content.slice(7).trim(); 
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
     
       const prompt = textToSend
